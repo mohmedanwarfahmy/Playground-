@@ -1,0 +1,27 @@
+<?php
+$profileimage = $_POST['profileimage'];
+$Firstname = $_POST['Firstname'];
+$Lastname = $_POST['Lastname'];
+$email = $_POST['email'];
+$Username = $_POST['Username'];
+$password = $_POST['password'];
+$Confirmpassword = $_POST['Confirmpassword'];
+$password = $_POST['bio'];
+  
+
+$conn = new mysqli ('localhost', 'root' ,'' , 'profile' ,'userprofile');
+if($conn->connect_error){
+
+    die('Connection Failed :' .$conn->connect_error);
+
+}else{
+    $stmt = $conn->prepare("insert into profile(profileimage, Firstname, Lastname, email, Username, password ,Confirmpassword ,bio)
+    values(?, ?, ?, ?, ?, ?, ?)");
+    $stmt->bind_param("ssssssss", $profileimage, $Firstname , $Lastname , $email, $Username, $password, $Confirmpassword ,$bio);
+    $stmt->execute();
+    echo "profile SUccessfuly..." ;
+    $stmt->close();
+    $conn->close();
+}
+ ?>
+

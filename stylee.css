@@ -1,0 +1,18 @@
+#profileDisplay{
+
+  display: block;
+  width: 25% ;
+  margin: 10px auto ;
+  border-radius:50% ;
+  padding-top: 60px;
+  
+  }
+  .form-horizontal{
+      background-color: #fff;
+    background-position: center;
+    font-family: sans-serif;
+    border: 1px solid #e0e0e0;
+    padding-top: 15px;
+
+  }
+  
